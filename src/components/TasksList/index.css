@@ -13,7 +13,7 @@
     font-weight: 700;
     padding: 1rem;
     border-radius: 8px;
-    width: 30rem;
+    max-width: 30rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -25,13 +25,15 @@
     justify-content: space-between;
     align-items: center;
     height: 3rem;
+    width: 100%;
+    gap: 1rem;
 }
 
 input[type="text"] {
     padding: .7rem;
     border: none;
     border-radius: 8px;
-    width: 75%;
+    width: 20rem;
 }
 
 h2 {
@@ -45,7 +47,7 @@ h3 {
 
 .botao {
     padding: .7rem;
-    width: 90px;
+    width: 7rem;
     height: 2.5rem;
     cursor: pointer;
     border: none;
@@ -80,4 +82,36 @@ h3 {
 
 .todo svg:hover {
     color: var(--red);
+}
+
+@media (max-width: 475px) {
+    .container-todo {
+        width: 23rem;
+    }
+
+    .container-todo h2 {
+        font-size: 1.5rem;
+    }
+
+    .container-todo p {
+        font-size: 1rem;
+    }
+
+    .container-tasks-list h3 {
+        font-size: 1.2rem;
+    }
+
+    .todo span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .container-todo {
+        width: 20rem;
+    }
+
+    .todo span {
+        font-size: 1rem;
+    }
 }

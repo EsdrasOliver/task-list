@@ -63,7 +63,7 @@ function TasksList() {
                 todos.length > 1 ? `Você tem ${todos.length} tarefas` :
                 null}
             </p>
-            <div>
+            <div className="container-tasks-list">
                 <h3>Lista de tarefas</h3>
                 <ul>
                     {todos.map((todo) => (
