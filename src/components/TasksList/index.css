@@ -1,0 +1,83 @@
+:root {
+    --white: #ffffff;
+    --black: #48466B; 
+    --gray:  #7D80AA; 
+    --pink: #D103FC; 
+    --red: #f33131;
+}
+
+.container-todo {
+    background: var(--gray);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container-input-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+}
+
+input[type="text"] {
+    padding: .7rem;
+    border: none;
+    border-radius: 8px;
+    width: 75%;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.botao {
+    padding: .7rem;
+    width: 90px;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: var(--pink);
+    color: var(--white);
+    font-weight: 600;
+    transition: 1s;
+}
+
+.botao:hover {
+    background: var(--white);
+    color: var(--pink);
+}
+
+.todo {
+    background: var(--black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.todo svg {
+    font-size: 1em;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.todo svg:hover {
+    color: var(--red);
+}
