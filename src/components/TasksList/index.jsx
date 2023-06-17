@@ -81,7 +81,6 @@ function TasksList() {
                 <h3>Lista de tarefas</h3>
                 <ul>
                     {todos.map((todo) => (
-                        /* className={todo.done ? 'done' : ''} */
                         <li key={todo.id} className={`todo ${todo.done ? 'done' : ''}`}>
                             <span>{todo.title}</span>
                             <div className="buttons-task">
