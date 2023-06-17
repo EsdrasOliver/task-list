@@ -3,6 +3,7 @@
     --black: #48466B; 
     --gray:  #7D80AA; 
     --pink: #D103FC; 
+    --green: #0aeb0a;
     --red: #f33131;
 }
 
@@ -80,8 +81,23 @@ h3 {
     transition: .5s;
 }
 
-.todo svg:hover {
+.todo .icon-trash:hover {
     color: var(--red);
+}
+
+.todo .icon-checked:hover {
+    color: var(--green);
+}
+
+.done, .done span {
+    background: var(--pink);
+    color: var(--white);
+    text-decoration: line-through;
+}
+
+.buttons-task {
+    display: flex;
+    gap: 1rem;
 }
 
 @media (max-width: 475px) {

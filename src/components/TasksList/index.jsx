@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { BsTrash } from "react-icons/bs"
+import { BsTrash, BsCheckLg } from "react-icons/bs"
 import "./index.css"
 import Loading from "../Loading"
 
@@ -26,12 +26,26 @@ function TasksList() {
         if(todo) {
             const newTodo = { 
                 id: new Date().getTime().toString(), 
-                title: todo
+                title: todo,
+                done: false
             }
             setTodos([...todos, newTodo])
             localStorage.setItem('ls_todos', JSON.stringify([...todos, newTodo]))
             setTodo('')
         }
+    }
+
+    const handleDone = (id) => {
+        console.log(id)
+        console.log(todos)
+        const newTodos = todos.map(todo => {
+            if(todo.id === id) {
+                todo.done =!todo.done
+            }
+            return todo
+        })
+        setTodos(newTodos)
+        localStorage.setItem('ls_todos', JSON.stringify(newTodos))
     }
 
     const handleDelete = (todo) => {
@@ -67,9 +81,13 @@ function TasksList() {
                 <h3>Lista de tarefas</h3>
                 <ul>
                     {todos.map((todo) => (
-                        <li key={todo.id} className="todo">
+                        /* className={todo.done ? 'done' : ''} */
+                        <li key={todo.id} className={`todo ${todo.done ? 'done' : ''}`}>
                             <span>{todo.title}</span>
-                            <BsTrash onClick={() => handleDelete(todo)} />
+                            <div className="buttons-task">
+                                <BsCheckLg className="icon-checked" onClick={() => handleDone(todo.id)} />
+                                <BsTrash className="icon-trash" onClick={() => handleDelete(todo)} />
+                            </div>
                         </li>
                     ))}
                 </ul>
